@@ -16,6 +16,7 @@ environment = os.getenv("ENVIRONMENT", "dev")  # Default to 'development' if not
 if environment == "dev":
     logger = logging.getLogger("uvicorn")
     logger.warning("Running in development mode - allowing CORS for all origins")
+    logger.setLevel(logging.DEBUG)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],

@@ -221,7 +221,7 @@ def _build_document_agents(
         ]
 
         # build agent
-        function_llm = OpenAI(model="gpt-4")
+        function_llm = OpenAI(model="gpt-3.5-turbo")
         agent = OpenAIAgent.from_tools(
             query_engine_tools,
             llm=function_llm,

@@ -74,7 +74,7 @@ async def chat(
 
         # stream response
         while True:
-            next_item = queue.get(True, 60.0)  # set a generous timeout of 60 seconds
+            next_item = queue.get(True, 120.0)  # set a generous timeout of 60 seconds
             # check type of next_item, if string or not
             if isinstance(next_item, EventObject):
                 yield convert_sse(dict(next_item))
